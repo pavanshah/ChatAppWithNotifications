@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script src="js/lib/angular/angular.js"></script>
+		<script src="js/lib/angular-desktop-notification.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/angularfiles/app.js"></script>
+		<script src="js/lib/services.js"></script>
+		<script src="js/angularfiles/controllers.js"></script>
+		<script src="js/lib/filters.js"></script>
+		<script src="js/lib/directives.js"></script>
+	</head>
+
+	<body ng-app = "myApp" ng-controller = "AppCtrl">
+	<h1>Chat Application</h1>
+
+	<div>
+	  
+	  <div class="col">
+	    <h3>Messages</h3>
+	    <div class="overflowable">
+	      <p ng-repeat="message in messages" ng-class="{alert: message.user == &quot;chatroom&quot;}">{{message.user}}: {{message.text}}</p>
+	    </div>
+	  </div>
+	  
+	  <div class="col">
+	    <h3>Users</h3>
+	    <div class="overflowable">
+	      <p ng-repeat="user in users">{{user}}</p>
+	    </div>
+	  </div>
+	  
+	  <div class="clr">
+	      <input size="60" ng-model="message"/>
+	      <input type="button" value="Send" ng-click = "sendMessage()"/>
+	  </div>
+	  
+	  <div class="clr">
+	    <h3>Change your name</h3>
+	    <p>Your current user name is {{name}}</p>
+	    <form ng-submit="changeName()">
+	      <input ng-model="newName"/>
+	      <input type="submit" value="Change Name"/>
+	    </form>
+	  </div>
+	</div>
+	</body>
+</html>
