@@ -1,5 +1,6 @@
 # Chat app with notifications
 
-Steps -
-1] npm install
-2] node app.js
+Steps -<br>
+1] npm install<br>
+2] node app.js<br>
+3] Allow notifications in your browser
